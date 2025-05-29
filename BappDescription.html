@@ -1,13 +1,25 @@
-<p><strong>Prerequisites:</strong> The extension requires Semgrep CLI to be installed in your machine.</p>
+<p>The extension integrates Semgrep static analysis into passive scanning, allowing users to apply custom Semgrep rules against HTTP responses. It enables security testing based on community-contributed rulesets, particularly useful for detecting client-side issues in JavaScript and other front-end technologies.</p>
 
-<p>The current project provides a Burp Suite extension to allow users to include Semgrep results to extend the checks in use by the passive scanner. By visiting repositories that collect Semgrep rules, it is possible to verify the large number of rules related to the front-end environment written by the community.</p>
-
-<p>By using this extension, Burp Suite users can include the Semgrep rules YAML files and define the scope of the analysis.</p>
-
-<p>Main features:</p>
+<h2>Features</h2>
 <ul>
-	<li>multiple tabs to use different Semgrep rules with different scopes</li>
-	<li>select files or directories containing Semgrep rules in YAML format</li>
-	<li>define a scope by specifing what can be or not be present in the response header/body</li>
-	<li>deactivate the checks without unloading the plugin</li>
+  <li>Multiple tabs for organizing different Semgrep rules and scopes</li>
+  <li>Select individual files or entire directories of Semgrep YAML rule files</li>
+  <li>Configure scope conditions based on presence or absence of content in response headers or body</li>
+  <li>Enable or disable rule checks without unloading the extension</li>
 </ul>
+
+<h2>Prerequisites</h2>
+<p>This extension requires the Semgrep CLI to be installed on your system.</p>
+<p>For Ubuntu, Windows through Windows Subsystem for Linux (WSL), Linux, macOS:</p>
+<pre><code class="Code">python3 -m pip install semgrep</code></pre>
+<p>For macOS:</p>
+<pre><code class="Code">brew install semgrep</code></pre>
+
+<h2>Usage</h2>
+<ol>
+  <li>In the "Rules Files" tab, choose the Semgrep YAML rules you want to apply.</li>
+  <li>In the "Scope" tab, set conditions that determine whether a rule applies to a specific response.</li>
+  <li>Use the toggle switch to activate or deactivate scanning for the current tab.</li>
+  <li>Passive scanning will apply the selected Semgrep rules to matching responses based on the defined scope.</li>
+</ol>
+
